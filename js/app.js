@@ -145,11 +145,11 @@ $(() => {
             {
                 label: "ETHUSD",
                 borderColor: 'rgba(75,192,192, 0.7)',
-                pointBorderColor: 'rgba(75,115,87, 0.7)',
+                pointBorderColor: 'rgba(75,192,87, 0.7)',
                 borderWidth: 2,
                 //kolor tla i legendy
                 fill: true, //czy wypelnic zbior
-                backgroundColor: 'rgba(236,115,87, 0.1)', //wplywa tez na kolor w legendzie
+                backgroundColor: 'rgba(75,192,87, 0.1)', //wplywa tez na kolor w legendzie
                 //ustawienia punktu
                 pointRadius: 4,
                 pointBorderWidth: 1,
@@ -164,12 +164,12 @@ $(() => {
             },
             {
                 label: "LTCUSD",
-                borderColor: 'rgba(132,177,237, 0.7)',
-                pointBorderColor: 'rgba(132,115,87, 0.7)',
+                borderColor: 'rgba(132,77,237, 0.7)',
+                pointBorderColor: 'rgba(132,115,237, 0.7)',
                 borderWidth: 2,
                 //kolor tla i legendy
                 fill: true, //czy wypelnic zbior
-                backgroundColor: 'rgba(236,115,87, 0.1)', //wplywa tez na kolor w legendzie
+                backgroundColor: 'rgba(132,77,237, 0.1)', //wplywa tez na kolor w legendzie
                 //ustawienia punktu
                 pointRadius: 4,
                 pointBorderWidth: 1,
