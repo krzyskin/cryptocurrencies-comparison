@@ -122,7 +122,7 @@ $(() => {
     let data = {
         labels: dateVisible,
         datasets: [{
-            label: "My First dataset",
+            label: "BTCUSD",
             //linia
             //borderDash: [3, 3], //jezeli ustawione to przerywana linia
             borderColor: 'rgba(236,115,87, 0.7)',
@@ -143,7 +143,7 @@ $(() => {
             data: btcVisible,
         },
             {
-                label: "My Second dataset",
+                label: "ETHUSD",
                 borderColor: 'rgba(75,192,192, 0.7)',
                 pointBorderColor: 'rgba(75,115,87, 0.7)',
                 borderWidth: 2,
@@ -163,7 +163,7 @@ $(() => {
                 data: ethVisible,
             },
             {
-                label: "My Third dataset",
+                label: "LTCUSD",
                 borderColor: 'rgba(132,177,237, 0.7)',
                 pointBorderColor: 'rgba(132,115,87, 0.7)',
                 borderWidth: 2,
@@ -209,7 +209,10 @@ $(() => {
                 type: 'logarithmic',
                 ticks: {
                     min: 0,
-                    max: 20000
+                    suggestedMax: 20000,
+                    callback: function(tick, index, ticks) {
+                        return tick.toLocaleString();
+                    }
                 }
             }]
         }
@@ -256,6 +259,17 @@ $(() => {
             updateChart(myLineChart);
 
         })
+        $('.plus-small').on('click', function () {
+
+            if (z-a>=10) {
+                a = a + 3;
+                z = z - 3;
+            }
+            setRange(a, z);
+            console.log(a, z);
+            updateChart(myLineChart);
+
+        })
         $('.minus').on('click', function () {
 
 
@@ -264,6 +278,21 @@ $(() => {
             }
             if (z <= (arrTimeB.length - 50)) {
                 z = z + 50
+            }
+
+            //let z = arrTimeB.length-count*50;
+            console.log(a, z);
+            setRange(a, z);
+            updateChart(myLineChart);
+        });
+        $('.minus-small').on('click', function () {
+
+
+            if (a >= 3) {
+                a = a - 3
+            }
+            if (z <= (arrTimeB.length - 3)) {
+                z = z + 3
             }
 
             //let z = arrTimeB.length-count*50;
@@ -281,6 +310,19 @@ $(() => {
             setRange(a, z);
             updateChart(myLineChart);
         })
+        $('.right-small').on('click', function () {
+
+            if(z<=arrTimeB.length-3){
+                a=a+3;
+                z=z+3
+            }else{
+                z=arrTimeB.length;
+                
+            }
+            console.log(a, z);
+            setRange(a, z);
+            updateChart(myLineChart);
+        })
         $('.left').on('click', function () {
 
             if(a>=50){
@@ -291,6 +333,21 @@ $(() => {
             setRange(a, z);
             updateChart(myLineChart);
         })
+        $('.left-small').on('click', function () {
+
+            if(a>=3){
+                a=a-3;
+                z=z-3;
+            }else{
+                a=0;
+                
+            }
+            console.log(a, z);
+            setRange(a, z);
+            updateChart(myLineChart);
+        })
+
+
     })
 
 })
